@@ -1,7 +1,6 @@
 package com.kernel360.hackerthon.studyup.member.repository;
 
 import com.kernel360.hackerthon.studyup.member.entity.Bookmark;
-import com.kernel360.hackerthon.studyup.study.entity.StudyMember;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,11 +10,11 @@ import java.util.Optional;
 
 @Repository
 public interface BookmarkRepository extends JpaRepository<Bookmark, BigInteger> {
-    public List<Bookmark> findAll();
+    List<Bookmark> findAll();
 
-    public Optional<Bookmark> findById(BigInteger id);
+    Optional<Bookmark> findById(BigInteger id);
 
-    public Bookmark save(Bookmark bookmark);
+    Bookmark save(Bookmark bookmark);
 
-    public void delete(Bookmark bookmark);
+    void delete(Bookmark bookmark);
 }

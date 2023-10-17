@@ -1,6 +1,5 @@
 package com.kernel360.hackerthon.studyup.member.repository;
 
-import com.kernel360.hackerthon.studyup.member.entity.Bookmark;
 import com.kernel360.hackerthon.studyup.member.entity.PeerReview;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -11,11 +10,11 @@ import java.util.Optional;
 
 @Repository
 public interface PeerReviewRepository extends JpaRepository<PeerReview, BigInteger> {
-    public List<PeerReview> findAll();
+    List<PeerReview> findAll();
 
-    public Optional<PeerReview> findById(BigInteger id);
+    Optional<PeerReview> findById(BigInteger id);
 
-    public PeerReview save(PeerReview peerReview);
+    PeerReview save(PeerReview peerReview);
 
-    public void delete(PeerReview peerReview);
+    void delete(PeerReview peerReview);
 }

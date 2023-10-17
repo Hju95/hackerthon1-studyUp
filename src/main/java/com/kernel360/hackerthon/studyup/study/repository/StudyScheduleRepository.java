@@ -1,6 +1,5 @@
 package com.kernel360.hackerthon.studyup.study.repository;
 
-import com.kernel360.hackerthon.studyup.study.entity.Study;
 import com.kernel360.hackerthon.studyup.study.entity.StudySchedule;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -11,11 +10,11 @@ import java.util.Optional;
 
 @Repository
 public interface StudyScheduleRepository extends JpaRepository<StudySchedule, BigInteger> {
-    public List<StudySchedule> findAll();
+    List<StudySchedule> findAll();
 
-    public Optional<StudySchedule> findById(BigInteger id);
+    Optional<StudySchedule> findById(BigInteger id);
 
-    public StudySchedule save(StudySchedule studySchedule);
+    StudySchedule save(StudySchedule studySchedule);
 
-    public void delete(StudySchedule studySchedule);
+    void delete(StudySchedule studySchedule);
 }

@@ -10,11 +10,11 @@ import java.util.Optional;
 
 @Repository
 public interface StudyRepository extends JpaRepository<Study, BigInteger> {
-    public List<Study> findAll();
+    List<Study> findAll();
 
-    public Optional<Study> findById(BigInteger id);
+    Optional<Study> findById(BigInteger id);
 
-    public Study save(Study study);
+    Study save(Study study);
 
-    public void delete(Study study);
+    void delete(Study study);
 }
