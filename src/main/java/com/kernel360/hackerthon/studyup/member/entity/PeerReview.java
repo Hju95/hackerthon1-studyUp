@@ -1,5 +1,6 @@
 package com.kernel360.hackerthon.studyup.member.entity;
 
+import com.kernel360.hackerthon.studyup.study.entity.StudyMember;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,11 +21,14 @@ public class PeerReview {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger peerReviewId;
 
-    @Column(nullable = false)
-    private BigInteger memberId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     @Column(nullable = false)
-    private BigInteger peerId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "study_member_id")
+    private StudyMember peer;
 
     @Column(nullable = false)
     private String peerReviewComment;
