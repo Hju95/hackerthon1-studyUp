@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @Entity
@@ -37,5 +38,5 @@ public class StudyMember {
     private LocalDateTime studyJoinDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime studyWithdrawalDate;
+    private Date studyWithdrawalDate;
 }

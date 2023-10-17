@@ -20,7 +20,7 @@ import java.sql.Timestamp;
 public class Bookmark {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger peerReviewId;
+    private BigInteger bookmarkId;
 
     @Column(nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
