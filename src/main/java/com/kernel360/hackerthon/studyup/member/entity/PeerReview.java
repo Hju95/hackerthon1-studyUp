@@ -11,6 +11,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Data
@@ -43,5 +44,5 @@ public class PeerReview {
     private Timestamp updatedAt;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Timestamp deletedAt;
+    private Date deletedAt;
 }

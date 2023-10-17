@@ -21,14 +21,12 @@ public class StudyMember {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger studyMemberId;
 
-    @Column(nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "study_id")
+    @JoinColumn(name = "study_id", nullable = false)
     private Study study;
 
-    @Column(nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "member_id", nullable = false)
     private Member member;
 
     @Column(nullable = false)

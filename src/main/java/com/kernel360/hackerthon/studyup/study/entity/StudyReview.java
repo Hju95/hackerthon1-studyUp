@@ -9,9 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.math.BigInteger;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.Date;
 
 @Data
@@ -24,14 +22,12 @@ public class StudyReview {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger studyReviewId;
 
-    @Column(nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "study_member_id")
+    @JoinColumn(name = "study_member_id", nullable = false)
     private StudyMember studyMember;
 
-    @Column(nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "study_id")
+    @JoinColumn(name = "study_id", nullable = false)
     private Study study;
 
     @Column(nullable = false)
