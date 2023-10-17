@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.math.BigInteger;
@@ -36,5 +37,6 @@ public class Bookmark {
     @CreationTimestamp
     private Timestamp createdAt;
 
+    @UpdateTimestamp
     private Timestamp modifiedAt;
 }

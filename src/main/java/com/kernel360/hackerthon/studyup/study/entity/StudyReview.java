@@ -46,5 +46,6 @@ public class StudyReview {
     @UpdateTimestamp
     private LocalDateTime modifiedAt;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime deletedAt;
 }

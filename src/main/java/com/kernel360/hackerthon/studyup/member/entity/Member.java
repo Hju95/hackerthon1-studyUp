@@ -46,6 +46,7 @@ public class Member {
     @CreationTimestamp
     private LocalDateTime registrationDate;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime withdrawalDate;
 
     @Column(length = 255)
