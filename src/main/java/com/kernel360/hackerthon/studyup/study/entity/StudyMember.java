@@ -36,5 +36,6 @@ public class StudyMember {
     @Column(nullable = false)
     private LocalDateTime studyJoinDate;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime studyWithdrawalDate;
 }

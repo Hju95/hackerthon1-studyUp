@@ -61,5 +61,6 @@ public class Study {
     @UpdateTimestamp
     private LocalDateTime modifiedAt;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime deletedAt;
 }
