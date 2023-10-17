@@ -1,5 +1,6 @@
 package com.kernel360.hackerthon.studyup.study.entity;
 
+import com.kernel360.hackerthon.studyup.member.entity.Member;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,10 +21,14 @@ public class StudyMember {
     private BigInteger studyMemberId;
 
     @Column(nullable = false)
-    private BigInteger studyId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "study_id")
+    private Study study;
 
     @Column(nullable = false)
-    private BigInteger memberId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
 
     @Column(nullable = false)
     private Character memberType;

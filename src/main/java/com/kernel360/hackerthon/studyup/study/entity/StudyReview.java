@@ -24,10 +24,14 @@ public class StudyReview {
     private BigInteger studyReviewId;
 
     @Column(nullable = false)
-    private BigInteger studyMemberId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "study_member_id")
+    private StudyMember studyMember;
 
     @Column(nullable = false)
-    private BigInteger studyId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "study_id")
+    private Study study;
 
     @Column(nullable = false)
     private String reviewComments;

@@ -25,7 +25,9 @@ public class StudySchedule {
     private BigInteger scheduleId;
 
     @Column(nullable = false)
-    private BigInteger studyId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "study_id")
+    private Study study;
 
     @Column(nullable = false)
     private LocalDate studyDate;
