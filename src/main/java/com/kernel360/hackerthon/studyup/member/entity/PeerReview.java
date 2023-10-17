@@ -26,9 +26,8 @@ public class PeerReview {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @Column(nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "study_member_id")
+    @JoinColumn(name = "study_member_id", nullable = false)
     private StudyMember peer;
 
     @Column(nullable = false)

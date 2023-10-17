@@ -13,6 +13,7 @@ import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Date;
 
 @Data
 @Entity
@@ -49,5 +50,5 @@ public class StudySchedule {
     private LocalDateTime modifiedAt;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime deletedAt;
+    private Date deletedAt;
 }

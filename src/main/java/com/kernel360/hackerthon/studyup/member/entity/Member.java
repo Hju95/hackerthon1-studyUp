@@ -9,6 +9,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
+import java.util.Date;
+
 
 @Entity
 @Data
@@ -47,7 +49,7 @@ public class Member {
     private LocalDateTime registrationDate;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime withdrawalDate;
+    private Date withdrawalDate;
 
     @Column(length = 255)
     private String socialId;

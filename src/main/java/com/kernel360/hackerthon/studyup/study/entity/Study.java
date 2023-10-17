@@ -11,6 +11,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @Entity
@@ -62,5 +63,5 @@ public class Study {
     private LocalDateTime modifiedAt;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime deletedAt;
+    private Date deletedAt;
 }
