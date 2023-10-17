@@ -4,55 +4,36 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.math.BigInteger;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Study {
+public class StudyReview {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private BigInteger studyReviewId;
+
+    @Column(nullable = false)
+    private BigInteger studyMemberId;
+
+    @Column(nullable = false)
     private BigInteger studyId;
 
-    @Column(nullable = false, length = 200)
-    private String studyTitle;
-
-    @Column(length = 500)
-    private String summary;
+    @Column(nullable = false)
+    private String reviewComments;
 
     @Column(nullable = false)
-    private String content;
-
-    @Column(nullable = false)
-    private short memberNum;
-
-    @Column(nullable = false)
-    private String category;
-
-    @Column(nullable = false)
-    @ColumnDefault("0")
-    private Integer views;
-
-    @Column(nullable = false)
-    @ColumnDefault("recruiting")
-    private String studyStatus;
-
-    @Column(nullable = false)
-    private LocalDateTime deadline;
-
-    @Column(nullable = false)
-    private LocalDateTime startDate;
-
-    @Column(nullable = false)
-    private LocalDateTime endDate;
+    private short studyRating;
 
     @Column(nullable = false)
     @CreationTimestamp
