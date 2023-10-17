@@ -23,7 +23,7 @@ public interface StudyService {
      * @return
      * DTO 객체 새로 생성 ( 스터디 정보 + 스터디에 속한 멤버 + 스터디 리뷰 + 기술 스택 + 스택 별점)
      */
-    ? getStudyById(BigInteger id);
+    ? getStudyById(BigInteger studyId);
 
     /**
      * 스터디 그룹 개설
@@ -42,7 +42,7 @@ public interface StudyService {
      * 스터디 그룹 삭제
      * @param id
      */
-    int deleteStudy(Long id);
+    int deleteStudy(Long studyId);
 
 
     /**
