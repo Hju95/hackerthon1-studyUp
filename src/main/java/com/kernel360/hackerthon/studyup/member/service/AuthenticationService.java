@@ -19,7 +19,7 @@ public interface AuthenticationService {
      * @param googleToken
      * @throws SignupException
      */
-    void signupWithGoogle(String googleToken) throws SignupException;
+    //void signupWithGoogle(String googleToken) throws SignupException;
 
 
     /**
@@ -36,7 +36,7 @@ public interface AuthenticationService {
      * @return
      * @throws GoogleSignInException
      */
-    Member loginWithGoogle(String googleToken) throws GoogleSignInException;
+    //Member loginWithGoogle(String googleToken) throws GoogleSignInException;
 
 
 }
