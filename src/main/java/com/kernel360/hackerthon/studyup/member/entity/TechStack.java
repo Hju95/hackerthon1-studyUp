@@ -21,19 +21,7 @@ public class TechStack {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger stackId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "stack_id")
-    private TechStack techStack;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
-    private Member member;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "study_id")
-    private Study study;
-
     @Column(nullable = false)
-    private Short TechName;
+    private String TechName;
 
 }
