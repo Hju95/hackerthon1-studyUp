@@ -17,8 +17,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Builder
 public class StudyMember {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EmbeddedId
     private BigInteger studyMemberId;
 
     @ManyToOne(fetch = FetchType.LAZY)

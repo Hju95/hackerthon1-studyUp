@@ -22,6 +22,10 @@ public class TechStack {
     private BigInteger stackId;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "stack_id")
+    private TechStack techStack;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
 
@@ -32,6 +36,4 @@ public class TechStack {
     @Column(nullable = false)
     private Short TechName;
 
-    @Column(nullable = false)
-    private Character useType;
 }
