@@ -13,7 +13,7 @@ public interface MemberService {
      * @param memberId
      * @return
      */
-    Member getMemberByNickname(int memberId);
+    Member getMemberByNickname(String memberId);
 
 
     /**

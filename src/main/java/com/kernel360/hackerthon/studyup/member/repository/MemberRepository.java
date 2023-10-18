@@ -23,4 +23,6 @@ public interface MemberRepository extends JpaRepository<Member, BigInteger> {
 
 
     Member save(Member member);
+
+    Member findByNickName(String name);
 }
