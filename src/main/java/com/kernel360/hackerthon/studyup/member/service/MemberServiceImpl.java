@@ -2,14 +2,25 @@ package com.kernel360.hackerthon.studyup.member.service;
 
 import com.kernel360.hackerthon.studyup.member.entity.Member;
 import com.kernel360.hackerthon.studyup.member.entity.PeerReview;
+import com.kernel360.hackerthon.studyup.member.repository.MemberRepository;
 import com.kernel360.hackerthon.studyup.study.entity.StudyReview;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
+@RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
+    private final MemberRepository memberRepository;
+
+//    public MemberServiceImpl(MemberRepository memberRepository){
+//        this.memberRepository = memberRepository;
+//    }
     // 종민
     @Override
     public Member getMemberByNickname(String nickname) {
+        memberRepository.findByNickName(nickname);
         return null;
     }
 
