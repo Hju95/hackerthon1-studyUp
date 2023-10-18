@@ -16,6 +16,7 @@ public interface MemberService {
     Member getMemberByNickname(String nickname);
 
 
+
     /**
      * 회원식별번호로 프로필 수정
      * @param memberId
