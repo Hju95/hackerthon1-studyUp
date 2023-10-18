@@ -119,7 +119,7 @@ public class StudyServiceImpl implements StudyService {
     // 주광
     @Override
     public List<StudyMember> getAllStudyMembers() {
-        return null;
+        return studyMemberRepository.findAll();
     }
 
     @Override
