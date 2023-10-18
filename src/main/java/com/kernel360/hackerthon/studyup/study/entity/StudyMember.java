@@ -16,8 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class StudyMember {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @EmbeddedId
     private BigInteger studyMemberId;
 
     @Column(nullable = false)
