@@ -1,6 +1,7 @@
 package com.kernel360.hackerthon.studyup.study.repository;
 
 import com.kernel360.hackerthon.studyup.study.entity.StudyMember;
+import com.kernel360.hackerthon.studyup.study.entity.StudyMemberId;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,6 +12,8 @@ import java.util.Optional;
 @Repository
 public interface StudyMemberRepository extends JpaRepository<StudyMember, BigInteger> {
     List<StudyMember> findAll();
+
+    List<BigInteger> findStudyMembersByStudyMemberId(BigInteger memberIds);
 
     Optional<StudyMember> findById(BigInteger id);
 

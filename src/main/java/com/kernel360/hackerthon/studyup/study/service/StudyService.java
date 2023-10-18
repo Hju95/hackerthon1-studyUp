@@ -1,6 +1,8 @@
 package com.kernel360.hackerthon.studyup.study.service;
 
 import com.kernel360.hackerthon.studyup.member.entity.Bookmark;
+import com.kernel360.hackerthon.studyup.study.dto.StudyDTO;
+import com.kernel360.hackerthon.studyup.study.dto.StudyGroupDetailDTO;
 import com.kernel360.hackerthon.studyup.study.entity.Study;
 import com.kernel360.hackerthon.studyup.study.entity.StudyMember;
 import com.kernel360.hackerthon.studyup.study.entity.StudySchedule;
@@ -19,11 +21,11 @@ public interface StudyService {
 
     /**
      * 스터디 그룹 상세 조회
-     * @param id
+     * @param studyId
      * @return
      * DTO 객체 새로 생성 ( 스터디 정보 + 스터디에 속한 멤버 + 스터디 리뷰 + 기술 스택 + 스택 별점)
      */
-    ? getStudyById(BigInteger studyId);
+    StudyGroupDetailDTO getStudyById(BigInteger studyId);
 
     /**
      * 스터디 그룹 개설
@@ -32,17 +34,17 @@ public interface StudyService {
 
     /**
      * 스터디 그룹 수정
-     * @param study
+     * @param studyId, studyDTO
      * @return
      */
-    int updateStudy(Study study);
+    int updateStudy(Long studyId, StudyDTO studyDTO);
 
 
     /**
      * 스터디 그룹 삭제
      * @param id
      */
-    int deleteStudy(Long studyId);
+    int deleteStudy(BigInteger studyId);
 
 
     /**

@@ -1,10 +1,13 @@
 package com.kernel360.hackerthon.studyup.study.controller;
 
+import com.kernel360.hackerthon.studyup.study.dto.StudyDTO;
+import com.kernel360.hackerthon.studyup.study.dto.StudyGroupDetailDTO;
 import com.kernel360.hackerthon.studyup.study.entity.Study;
 import com.kernel360.hackerthon.studyup.study.service.StudyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigInteger;
 import java.util.List;
 
 @RestController // redirect 나오면 Controller로 수정
@@ -28,25 +31,37 @@ public class StudyController {
      * (*)스터디 그룹 상세 조회
      */
     @GetMapping("/{study-id}")
-    public Study getStudy() {
-        DTO객체 객체명 = studyService.getStudyById(@PathVariable Long id);
-        return 객체명;
+    public StudyGroupDetailDTO getStudy(@PathVariable("study-id") Long studyId) {
+        StudyGroupDetailDTO studyGroupDetailDTO = studyService.getStudyById(BigInteger.valueOf(studyId));
+        return studyGroupDetailDTO;
     }
 
     /**
      * (*)스터디 그룹 개설
      */
     @PostMapping
+    public StudyDTO createStudy(@RequestBody StudyDTO studyDTO) {
+        StudyDTO createdStudy = studyService.createStudy(studyDTO);
+        return createdStudy;
+    }
 
     /**
      * (*)스터디 그룹 수정
      */
-    @PatchMapping
+    public StudyDTO updateStudy(@PathVariable Long studyId, @RequestBody StudyDTO studyDTO) {
+
+        try {
+            int updatedStudy = studyService.updateStudy(studyId, studyDTO);
+            return updatedStudy;
+        } catch (NullPointerException e) {
+            return null;
+        }
+    }
 
     /**
      * (*)스터디 그룹 삭제
      */
-    @DeleteMapping
+    @DeleteMapping("/{study-id}")
 
     /**
      * 스터디 그룹 멤버 조회
