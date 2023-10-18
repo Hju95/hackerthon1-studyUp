@@ -47,6 +47,8 @@ public class StudyServiceImpl implements StudyService {
         // id로 Study를 조회
         Optional<Study> optionalStudy = studyRepository.findById(studyId);
 
+        StudyGroupDetailDTO studyGroupDetailDTO = null;
+
 
         // StudyGroupDetailDTO에 저장한다.
         if (optionalStudy.isPresent()) {
@@ -58,7 +60,7 @@ public class StudyServiceImpl implements StudyService {
 
 
             // StudyGroupDetailDTO 생성
-            StudyGroupDetailDTO studyGroupDetailDTO = StudyGroupDetailDTO.builder()
+            studyGroupDetailDTO = StudyGroupDetailDTO.builder()
                     .studyId(study.getStudyId())
                     .studyTitle(study.getStudyTitle())
                     .summary(study.getSummary())
@@ -76,7 +78,7 @@ public class StudyServiceImpl implements StudyService {
                     .studyMembers(studyMembers)
                     .build();
         }
-        return null;
+        return studyGroupDetailDTO;
     }
 
 

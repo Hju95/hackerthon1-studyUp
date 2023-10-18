@@ -10,10 +10,11 @@ public interface MemberService {
 
     /**
      * 회원식별번호로 프로필 조회
-     * @param memberId
+     * @param nickname
      * @return
      */
-    Member getMemberByNickname(String memberId);
+    Member getMemberByNickname(String nickname);
+
 
 
     /**
