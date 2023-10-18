@@ -105,10 +105,18 @@ public class StudyServiceImpl implements StudyService {
     }
 
     @Override
-    public int deleteStudy(Long id) {
+    public int deleteStudy(Long studyId) {
+        Optional<Study> optionalStudy = studyRepository.findById(BigInteger.valueOf(studyId));
+
+        if (optionalStudy.isPresent()) {
+            Study study = optionalStudy.get();
+            studyRepository.deleteById(BigInteger.valueOf(studyId));
+            return 1;
+        }
         return 0;
     }
 
+    // 주광
     @Override
     public List<StudyMember> getAllStudyMembers() {
         return null;
@@ -125,7 +133,7 @@ public class StudyServiceImpl implements StudyService {
     }
 
     @Override
-    public Study getStudyByStudyId(int studyTitle) {
+    public Study getStudyScheduleByStudyId(int studyTitle) {
         return null;
     }
 
@@ -158,4 +166,6 @@ public class StudyServiceImpl implements StudyService {
     public int updateBookmarkByBookmarkId(int bookmarkId) {
         return 0;
     }
+
+    // 1
 }

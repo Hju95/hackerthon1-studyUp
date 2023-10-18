@@ -42,9 +42,9 @@ public interface StudyService {
 
     /**
      * 스터디 그룹 삭제
-     * @param id
+     * @param studyId
      */
-    int deleteStudy(BigInteger studyId);
+    int deleteStudy(Long studyId);
 
 
     /**
@@ -74,7 +74,7 @@ public interface StudyService {
      * @param studyTitle
      * @return
      */
-    Study getStudyByStudyId(int studyTitle);
+    Study getStudyScheduleByStudyId(int studyTitle);
 
 
     /**

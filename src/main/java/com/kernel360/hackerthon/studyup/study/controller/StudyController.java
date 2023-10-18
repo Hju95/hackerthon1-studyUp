@@ -49,12 +49,12 @@ public class StudyController {
      * (*)스터디 그룹 수정
      */
     public StudyDTO updateStudy(@PathVariable Long studyId, @RequestBody StudyDTO studyDTO) {
+        int result = studyService.updateStudy(studyId, studyDTO);
 
-        try {
-            int updatedStudy = studyService.updateStudy(studyId, studyDTO);
-            return updatedStudy;
-        } catch (NullPointerException e) {
-            return null;
+        // 스터디 그룹 수정 완료
+        if (result == 1) {
+        } else {
+
         }
     }
 
