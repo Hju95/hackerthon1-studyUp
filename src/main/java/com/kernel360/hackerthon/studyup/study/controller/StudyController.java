@@ -103,15 +103,13 @@ public class StudyController {
 
 
 
+
 //    /**
 //     * (*)스터디 그룹 수정
 //     */
 //    public StudyDTO updateStudy(@PathVariable Long studyId, @RequestBody StudyDTO studyDTO) {
 //        int result = studyService.updateStudy(studyId, studyDTO);
-//    }
-
-
-
+//
 //    /**
 //     * (*)스터디 그룹 삭제
 //     */
