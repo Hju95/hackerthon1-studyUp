@@ -30,7 +30,12 @@ public interface StudyService {
     /**
      * 스터디 그룹 개설
      */
-    int createStudy(Study study);
+    Study createStudy(Study study);
+
+    /**
+     * 스터디 참여
+     */
+    boolean joinStudy(Long studyId); // 추후에 멤버 id 받아오는 로직 추가
 
     /**
      * 스터디 그룹 수정
