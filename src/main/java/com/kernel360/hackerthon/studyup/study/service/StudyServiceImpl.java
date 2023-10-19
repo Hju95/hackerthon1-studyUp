@@ -19,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Date;
@@ -80,9 +81,29 @@ public class StudyServiceImpl implements StudyService {
     }
 
 
+    @Transactional
     @Override
-    public int createStudy(Study study) {
-        return 0;
+    public Study createStudy(Study study) {
+        try {
+            // 성공시
+            return studyRepository.save(study);
+        } catch (Exception e) {
+            // 실패 및 예외 발생시
+            return null;
+        }
+    }
+
+    @Transactional
+    public boolean joinStudy(Long studyId) {
+        try {
+            Study study = studyRepository.findById(BigInteger.valueOf(studyId))
+                    .orElseThrow(() -> new IllegalAccessException("스터디가 존재하지 않습니다."));
+            // 멤버 정보 저장하는 로직
+            studyRepository.save(study);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     // 나중에 업데이트된 건수로 int 표현하기
